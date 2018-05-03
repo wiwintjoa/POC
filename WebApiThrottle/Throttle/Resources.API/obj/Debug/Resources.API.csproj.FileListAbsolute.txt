@@ -184,3 +184,5 @@ F:\Project\BSI\04 Construction\POC\WebApiThrottle\Throttle\Resources.API\bin\Uni
 F:\Project\BSI\04 Construction\POC\WebApiThrottle\Throttle\Resources.API\bin\Unity.RegistrationByConvention.pdb
 F:\Project\BSI\04 Construction\POC\WebApiThrottle\Throttle\Resources.API\bin\Unity.ServiceLocation.pdb
 F:\Project\BSI\04 Construction\POC\WebApiThrottle\Throttle\Resources.API\bin\WebApiThrottle.xml
+F:\Project\BSI\04 Construction\POC\WebApiThrottle\Throttle\Resources.API\bin\System.Web.Http.Tracing.dll
+F:\Project\BSI\04 Construction\POC\WebApiThrottle\Throttle\Resources.API\bin\System.Web.Http.Tracing.xml
