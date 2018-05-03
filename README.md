@@ -1,3 +1,5 @@
 # POC
 
-this is sample project to implement limitation to hit API end point.
+this is sample project to research some module that will use in project.
+first one is using Throttle to limit api endpoint hit.
+
