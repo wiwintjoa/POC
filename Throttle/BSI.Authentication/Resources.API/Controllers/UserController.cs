@@ -5,6 +5,7 @@ using System.Web.Http;
 
 namespace Resources.API
 {
+    [Authorize]
     [RoutePrefix("api/users")]
     public class UserController : ApiController
     {
@@ -14,9 +15,7 @@ namespace Resources.API
         {
             _repository = repository;
         }
-
-
-        //[Authorize]
+        
         [Route("GetAll")]
         [Throttle(Name = "TestThrottle", Message = "You must wait {n} seconds before accessing this url again.", Seconds = 5)]
         public IHttpActionResult GetUsers()

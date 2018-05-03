@@ -51,8 +51,8 @@ namespace Resources.API
 
         private void ConfigureOAuthTokenConsumption(IAppBuilder app)
         {
-            //var issuer = "http://localhost:60135";
-            var issuer = "http://localhost/Bsi.Authentication.API";
+            var issuer = "http://jwtauthzsrv.azurewebsites.net";
+            //var issuer = "http://localhost/Bsi.Authentication.API";
             string audienceId = ConfigurationManager.AppSettings["as:AudienceId"];
             byte[] audienceSecret = TextEncodings.Base64Url.Decode(ConfigurationManager.AppSettings["as:AudienceSecret"]);
 
