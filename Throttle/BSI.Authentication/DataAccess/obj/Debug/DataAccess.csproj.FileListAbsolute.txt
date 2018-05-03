@@ -1,0 +1,4 @@
+F:\Project\BSI\BSI.Authentication\DataAccess\bin\Debug\DataAccess.dll
+F:\Project\BSI\BSI.Authentication\DataAccess\bin\Debug\DataAccess.pdb
+F:\Project\BSI\BSI.Authentication\DataAccess\obj\Debug\DataAccess.dll
+F:\Project\BSI\BSI.Authentication\DataAccess\obj\Debug\DataAccess.pdb

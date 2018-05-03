@@ -1,0 +1,13 @@
+F:\Project\BSI\BSI.Authentication\BussinessLogic\bin\Debug\BussinessLogic.dll
+F:\Project\BSI\BSI.Authentication\BussinessLogic\bin\Debug\BussinessLogic.pdb
+F:\Project\BSI\BSI.Authentication\BussinessLogic\bin\Debug\Dapper.dll
+F:\Project\BSI\BSI.Authentication\BussinessLogic\bin\Debug\DataAccess.dll
+F:\Project\BSI\BSI.Authentication\BussinessLogic\bin\Debug\Drapper.dll
+F:\Project\BSI\BSI.Authentication\BussinessLogic\bin\Debug\Drapper.Validation.dll
+F:\Project\BSI\BSI.Authentication\BussinessLogic\bin\Debug\Newtonsoft.Json.dll
+F:\Project\BSI\BSI.Authentication\BussinessLogic\bin\Debug\DataAccess.pdb
+F:\Project\BSI\BSI.Authentication\BussinessLogic\bin\Debug\Dapper.xml
+F:\Project\BSI\BSI.Authentication\BussinessLogic\bin\Debug\Newtonsoft.Json.xml
+F:\Project\BSI\BSI.Authentication\BussinessLogic\obj\Debug\Authentication.BussinessLogic.csprojResolveAssemblyReference.cache
+F:\Project\BSI\BSI.Authentication\BussinessLogic\obj\Debug\BussinessLogic.dll
+F:\Project\BSI\BSI.Authentication\BussinessLogic\obj\Debug\BussinessLogic.pdb
