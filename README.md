@@ -20,6 +20,16 @@ note: the sample api controller based on https://docs.microsoft.com/en-us/aspnet
 
 ###Throttle
 use actionfilter to implement throttle by limit api end point hit.
+```
+To access the api, use POSTMAN by do this step:
+
+- Get token from http://jwtauthzsrv.azurewebsites.net/oauth2/token.
+
+- Use this token to get list of users: http://localhost:64589/api/users/GetAll. 
+
+"You must wait 5 seconds before accessing this url again."
+
+```
 
 ###WebApiThrottle
 use WebApiThrottle nuget package to limit api end point hit.
