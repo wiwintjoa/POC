@@ -28,8 +28,8 @@ namespace Resources.API
             return Ok(json);
         }
 
+        [Route("GetByEmail/{email}")]
         [DisableThrotting]
-        [Route("GetByEmail")]
         public IHttpActionResult GetUserByEmail(string email)
         {
             var user = _repository.GetByEmail(email);

@@ -3,3 +3,9 @@
 ################################################################################
 
 /Books/Books.API/bin
+/Books/Books.API/obj/Debug
+/Books/Books.API/Books.API.csproj.user
+/Books/Books.DataAccess/bin/Debug
+/Books/Books.DataAccess/obj/Debug
+/Books/Books.Domain/bin/Debug
+/Books/Books.Domain/obj/Debug
