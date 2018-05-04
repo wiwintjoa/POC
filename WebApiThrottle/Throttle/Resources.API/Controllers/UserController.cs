@@ -18,7 +18,7 @@ namespace Resources.API
 
         //[Authorize]
         [Route("GetAll")]
-        [EnableThrottling(PerSecond = 10)]
+        [EnableThrottling(PerSecond = 1)]
         public IHttpActionResult GetUsers()
         {
             var users = _repository.GetAll();
@@ -42,29 +42,29 @@ namespace Resources.API
             return Ok(user);
         }
 
-        /// <summary>
-        /// Policy runtime update example
-        /// </summary>
-        [NonAction]
-        public void UpdateRateLimits()
-        {
-            //init policy repo
-            var policyRepository = new PolicyCacheRepository();
+        ///// <summary>
+        ///// Policy runtime update example
+        ///// </summary>
+        //[NonAction]
+        //public void UpdateRateLimits()
+        //{
+        //    //init policy repo
+        //    var policyRepository = new PolicyCacheRepository();
 
-            //get policy object from cache
-            var policy = policyRepository.FirstOrDefault(ThrottleManager.GetPolicyKey());
+        //    //get policy object from cache
+        //    var policy = policyRepository.FirstOrDefault(ThrottleManager.GetPolicyKey());
 
-            //update client rate limits
-            policy.ClientRules["api-client-key-1"] =
-                new RateLimits { PerMinute = 50, PerHour = 500 };
+        //    //update client rate limits
+        //    policy.ClientRules["api-client-key-1"] =
+        //        new RateLimits { PerMinute = 50, PerHour = 500 };
 
-            //add new client rate limits
-            policy.ClientRules.Add("api-client-key-3",
-                new RateLimits { PerMinute = 60, PerHour = 600 });
+        //    //add new client rate limits
+        //    policy.ClientRules.Add("api-client-key-3",
+        //        new RateLimits { PerMinute = 60, PerHour = 600 });
 
-            //apply policy updates
-            ThrottleManager.UpdatePolicy(policy, policyRepository);
+        //    //apply policy updates
+        //    ThrottleManager.UpdatePolicy(policy, policyRepository);
 
-        }
+        //}
     }
 }

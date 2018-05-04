@@ -75,60 +75,62 @@ namespace Resources.API
 
         private void ConfigureThrottle(HttpConfiguration config)
         {
-            ////Register throttling handler
-            //config.MessageHandlers.Add(new ThrottlingHandler()
-            //{
-            //    Policy = new ThrottlePolicy(perSecond: 3, perMinute: 20, perHour: 200, perDay: 1500, perWeek: 3000)
-            //    {
-            //        IpThrottling = true
-            //    },
-            //    Repository = new CacheRepository()
-            //});
-
-            //trace provider
-            var traceWriter = new SystemDiagnosticsTraceWriter()
+            //Register throttling handler
+            config.MessageHandlers.Add(new ThrottlingHandler()
             {
-                IsVerbose = true
-            };
-            config.Services.Replace(typeof(System.Web.Http.Tracing.ITraceWriter), traceWriter);
-            config.EnableSystemDiagnosticsTracing();
-
-            //Web API throttling handler
-            config.MessageHandlers.Add(new ThrottlingHandler(
-                policy: new ThrottlePolicy(perMinute: 20, perHour: 30, perDay: 35, perWeek: 3000)
+                //Policy = new ThrottlePolicy(perSecond: 3, perMinute: 20, perHour: 200, perDay: 1500, perWeek: 3000)
+                Policy = new ThrottlePolicy(perSecond: 1, perMinute: 20)
                 {
-                    ////scope to IPs
-                    //IpThrottling = true,
-                    //IpRules = new Dictionary<string, RateLimits>
-                    //{
-                    //    { "::1/10", new RateLimits { PerSecond = 2 } },
-                    //    { "192.168.2.1", new RateLimits { PerMinute = 30, PerHour = 30*60, PerDay = 30*60*24 } }
-                    //},
-
-                    ////white list the "::1" IP to disable throttling on localhost for Win8
-                    //IpWhitelist = new List<string> { "127.0.0.1", "192.168.0.0/24" },
-
-                    ////scope to clients (if IP throttling is applied then the scope becomes a combination of IP and client key)
-                    //ClientThrottling = true,
-                    //ClientRules = new Dictionary<string, RateLimits>
-                    //{
-                    //    { "api-client-key-1", new RateLimits { PerMinute = 60, PerHour = 600 } },
-                    //    { "api-client-key-9", new RateLimits { PerDay = 5000 } }
-                    //},
-                    ////white list API keys that don’t require throttling
-                    //ClientWhitelist = new List<string> { "admin-key" },
-
-                    //scope to endpoints
-                    EndpointThrottling = true,
-                    EndpointRules = new Dictionary<string, RateLimits>
-                    {
-                        { "api/users", new RateLimits { PerSecond = 10, PerMinute = 100, PerHour = 1000 } }
-                    }
+                    IpThrottling = true
                 },
-                policyRepository: new PolicyCacheRepository(),
-                repository: new CacheRepository(),
-                logger: new TracingThrottleLogger(traceWriter),
-                ipAddressParser: new CustomIpAddressParser()));
+                Repository = new CacheRepository()
+            });
+
+            ////trace provider
+            //var traceWriter = new SystemDiagnosticsTraceWriter()
+            //{
+            //    IsVerbose = true
+            //};
+            //config.Services.Replace(typeof(System.Web.Http.Tracing.ITraceWriter), traceWriter);
+            //config.EnableSystemDiagnosticsTracing();
+
+            ////Web API throttling handler
+            //config.MessageHandlers.Add(new ThrottlingHandler(
+            //    //policy: new ThrottlePolicy(perMinute: 20, perHour: 30, perDay: 35, perWeek: 3000)
+            //    policy: new ThrottlePolicy(perSecond: 1, perMinute: 30)
+            //    {
+            //        ////scope to IPs
+            //        IpThrottling = true,
+            //        //IpRules = new Dictionary<string, RateLimits>
+            //        //{
+            //        //    { "::1/10", new RateLimits { PerSecond = 2 } },
+            //        //    { "192.168.2.1", new RateLimits { PerMinute = 30, PerHour = 30*60, PerDay = 30*60*24 } }
+            //        //},
+
+            //        ////white list the "::1" IP to disable throttling on localhost for Win8
+            //        //IpWhitelist = new List<string> { "127.0.0.1", "192.168.0.0/24" },
+
+            //        ////scope to clients (if IP throttling is applied then the scope becomes a combination of IP and client key)
+            //        //ClientThrottling = true,
+            //        //ClientRules = new Dictionary<string, RateLimits>
+            //        //{
+            //        //    { "api-client-key-1", new RateLimits { PerMinute = 60, PerHour = 600 } },
+            //        //    { "api-client-key-9", new RateLimits { PerDay = 5000 } }
+            //        //},
+            //        ////white list API keys that don’t require throttling
+            //        //ClientWhitelist = new List<string> { "admin-key" },
+
+            //        //scope to endpoints
+            //        EndpointThrottling = true,
+            //        //EndpointRules = new Dictionary<string, RateLimits>
+            //        //{
+            //        //    { "api/users", new RateLimits { PerSecond = 10, PerMinute = 100, PerHour = 1000 } }
+            //        //}
+            //    },
+            //    policyRepository: new PolicyCacheRepository(),
+            //    repository: new CacheRepository(),
+            //    logger: new TracingThrottleLogger(traceWriter),
+            //    ipAddressParser: new CustomIpAddressParser()));
 
         }
     }

@@ -5,7 +5,7 @@ using System.Web.Http;
 
 namespace Resources.API
 {
-    [Authorize]
+    //[Authorize]
     [RoutePrefix("api/users")]
     public class UserController : ApiController
     {
