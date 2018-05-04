@@ -29,6 +29,8 @@ To access the api, use POSTMAN by do this step:
 
 "You must wait 5 seconds before accessing this url again."
 
+sample POSTMAN can be seen in this file: Capture Testing Using Postman.PNG
+
 ```
 
 ###WebApiThrottle
