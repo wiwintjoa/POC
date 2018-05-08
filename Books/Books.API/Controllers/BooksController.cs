@@ -29,7 +29,8 @@ namespace Books.API.Controllers
 
         // GET: api/Books
         [Route("")]
-        [EnableThrottling(PerSecond = 1)]
+        //[EnableThrottling(PerSecond = 1)]
+        //[EnableThrottling()]
         public IHttpActionResult GetBooks()
         {
             var books = db.Books.Include(b => b.Author).Select(AsBookDto);
