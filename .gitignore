@@ -9,3 +9,11 @@
 /Books/Books.DataAccess/obj/Debug
 /Books/Books.Domain/bin/Debug
 /Books/Books.Domain/obj/Debug
+/BooksCustomThrottleFilter/Books.DataAccess/obj/Debug
+/BooksCustomThrottleFilter/Books.DataAccess/bin/Debug
+/BooksCustomThrottleFilter/Books.Domain/bin/Debug
+/BooksCustomThrottleFilter/Books.Domain/obj/Debug
+/BooksCustomThrottleFilter/Books.API/bin
+/BooksCustomThrottleFilter/Books.API/obj/Debug
+/Books/WebApiThrottle/obj/Debug
+/Books/WebApiThrottle/bin/Debug

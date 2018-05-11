@@ -48,10 +48,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BooksAPIContext.cs" />
-    <Compile Include="Migrations\201805040453250_Initial.cs" />
-    <Compile Include="Migrations\201805040453250_Initial.Designer.cs">
-      <DependentUpon>201805040453250_Initial.cs</DependentUpon>
-    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -64,11 +60,6 @@
       <Project>{7c790daa-a6ae-409f-b4ac-5754f71579f6}</Project>
       <Name>Books.Domain</Name>
     </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="Migrations\201805040453250_Initial.resx">
-      <DependentUpon>201805040453250_Initial.cs</DependentUpon>
-    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

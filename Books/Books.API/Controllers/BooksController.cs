@@ -1,4 +1,5 @@
-﻿using Books.API.Models;
+﻿using Books.API.Helper;
+using Books.API.Models;
 using Books.DataAccess;
 using Books.Domain.Model;
 using Newtonsoft.Json;
@@ -29,13 +30,13 @@ namespace Books.API.Controllers
 
         // GET: api/Books
         [Route("")]
-        //[EnableThrottling(PerSecond = 1)]
-        //[EnableThrottling()]
+        [EnableThrottling(PerSecond = 1)]
+        //[EnableThrottling()]        
         public IHttpActionResult GetBooks()
         {
             var books = db.Books.Include(b => b.Author).Select(AsBookDto);
 
-            string results = JsonConvert.SerializeObject(books, Formatting.Indented);
+            string results = JsonConvert.SerializeObject(books, Formatting.None);
 
             return Ok(results);
         }
@@ -54,7 +55,7 @@ namespace Books.API.Controllers
                 return NotFound();
             }
 
-            string result = JsonConvert.SerializeObject(book, Formatting.Indented);
+            string result = JsonConvert.SerializeObject(book, Formatting.None);
 
             return Ok(result);
         }
@@ -81,7 +82,7 @@ namespace Books.API.Controllers
                 return NotFound();
             }
 
-            string result = JsonConvert.SerializeObject(book, Formatting.Indented);
+            string result = JsonConvert.SerializeObject(book, Formatting.None);
 
             return Ok(result);
         }
@@ -94,7 +95,7 @@ namespace Books.API.Controllers
                 .Where(b => b.Genre.Equals(genre, StringComparison.OrdinalIgnoreCase))
                 .Select(AsBookDto);
 
-            string results = JsonConvert.SerializeObject(books, Formatting.Indented);
+            string results = JsonConvert.SerializeObject(books, Formatting.None);
 
             return Ok(results);
         }
@@ -108,7 +109,7 @@ namespace Books.API.Controllers
                 .Where(b => b.AuthorId == authorId)
                 .Select(AsBookDto);
 
-            string results = JsonConvert.SerializeObject(books, Formatting.Indented);
+            string results = JsonConvert.SerializeObject(books, Formatting.None);
 
             return Ok(results);          
         }
@@ -124,7 +125,7 @@ namespace Books.API.Controllers
                     == DbFunctions.TruncateTime(pubdate))
                 .Select(AsBookDto);
 
-            string results = JsonConvert.SerializeObject(books, Formatting.Indented);
+            string results = JsonConvert.SerializeObject(books, Formatting.None);
 
             return Ok(results);
 

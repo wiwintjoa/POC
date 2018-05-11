@@ -1,6 +1,6 @@
 namespace Books.DataAccess.Migrations
 {
-    using Books.Domain.Model;
+    using Domain.Model;
     using System;
     using System.Data.Entity;
     using System.Data.Entity.Migrations;
@@ -47,6 +47,11 @@ namespace Books.DataAccess.Migrations
                 new Book() { BookId = 5, Title = "Splish Splash", Genre = "Romance",
                     PublishDate = new DateTime(2000, 11, 02), AuthorId = 4, Description =
                     "A deep sea diver finds true love 20,000 leagues beneath the sea.", Price = 6.99M},
+            });
+
+            context.Throttlings.AddOrUpdate(new Throttling[] {
+                new Throttling() { Id = 1, Endpoint = "/api/books", Seconds = 1, Minute = 60, Hours = 120 },
+                new Throttling() { Id = 2, Endpoint = "/api/books/fantasy", Seconds = 1, Minute = 60, Hours = 120 }
             });
         }
     }

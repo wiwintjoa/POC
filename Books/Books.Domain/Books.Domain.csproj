@@ -43,6 +43,7 @@
   <ItemGroup>
     <Compile Include="Model\Author.cs" />
     <Compile Include="Model\Book.cs" />
+    <Compile Include="Model\Throttling.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
